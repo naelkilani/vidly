@@ -9,7 +9,7 @@ namespace Vidly.Controllers
         public ActionResult Random()
         {
             var movie = new Movie { Id = 1, Name = "Shark" };
-            return View(movie);
+            return RedirectToAction("Index", "Home", new { Page = 1, SortBy = "name" });
         }
     }
 }
