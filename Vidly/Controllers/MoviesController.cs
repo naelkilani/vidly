@@ -21,7 +21,12 @@ namespace Vidly.Controllers
             if (sortBy.IsNullOrWhiteSpace())
                 sortBy = "name";
 
-            return Content($"page = {page} & sortBy = {sortBy}");
+            return Content($"page={page} & sortBy={sortBy}");
+        }
+
+        public ActionResult Released(int year, int month)
+        {
+            return Content($"year={year} & month={month}");
         }
     }
 }
