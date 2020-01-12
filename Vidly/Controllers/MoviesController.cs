@@ -24,8 +24,7 @@ namespace Vidly.Controllers
             return Content($"page={page} & sortBy={sortBy}");
         }
 
-        //ToDo: fix the issue of matching exactly 4 digits.
-        [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
+        [Route("movies/released/{year:regex(\\b\\d{4}\\b)}/{month:regex(\\b\\d{2}\\b):range(1,12)}")]
         public ActionResult Released(int year, int month)
         {
             return Content($"year={year} & month={month}");
