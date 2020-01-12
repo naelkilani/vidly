@@ -9,7 +9,10 @@ namespace Vidly.Controllers
         public ActionResult Random()
         {
             var movie = new Movie { Id = 1, Name = "Shark" };
-            return View(movie);
+            ViewData["Movie"] = movie;
+            ViewBag.Movie = movie;
+
+            return View();
         }
     }
 }
