@@ -1,5 +1,4 @@
-﻿using Microsoft.Ajax.Utilities;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Vidly.Models;
 
 namespace Vidly.Controllers
@@ -10,24 +9,7 @@ namespace Vidly.Controllers
         public ActionResult Random()
         {
             var movie = new Movie { Id = 1, Name = "Shark" };
-            return RedirectToAction("Index", "Home", new { Page = 1, SortBy = "name" });
-        }
-
-        public ActionResult Index(int? page, string sortBy)
-        {
-            if (!page.HasValue)
-                page = 1;
-
-            if (sortBy.IsNullOrWhiteSpace())
-                sortBy = "name";
-
-            return Content($"page={page} & sortBy={sortBy}");
-        }
-
-        [Route("movies/released/{year:regex(\\b\\d{4}\\b)}/{month:regex(\\b\\d{2}\\b):range(1,12)}")]
-        public ActionResult Released(int year, int month)
-        {
-            return Content($"year={year} & month={month}");
+            return View(movie);
         }
     }
 }
