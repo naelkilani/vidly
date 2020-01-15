@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202001142343414_AddAnnotationToCustomerName.Designer.cs">
       <DependentUpon>202001142343414_AddAnnotationToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001152155461_AddDiscountRateDisplayToMembership.cs" />
+    <Compile Include="Migrations\202001152155461_AddDiscountRateDisplayToMembership.Designer.cs">
+      <DependentUpon>202001152155461_AddDiscountRateDisplayToMembership.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -312,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001142343414_AddAnnotationToCustomerName.resx">
       <DependentUpon>202001142343414_AddAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001152155461_AddDiscountRateDisplayToMembership.resx">
+      <DependentUpon>202001152155461_AddDiscountRateDisplayToMembership.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
