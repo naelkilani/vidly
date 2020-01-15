@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202001152218328_AddNameToMembership.Designer.cs">
       <DependentUpon>202001152218328_AddNameToMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001152222221_UpdateNameMemberships.cs" />
+    <Compile Include="Migrations\202001152222221_UpdateNameMemberships.Designer.cs">
+      <DependentUpon>202001152222221_UpdateNameMemberships.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -326,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001152218328_AddNameToMembership.resx">
       <DependentUpon>202001152218328_AddNameToMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001152222221_UpdateNameMemberships.resx">
+      <DependentUpon>202001152222221_UpdateNameMemberships.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
