@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -34,7 +35,13 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var memberships = _context.Memberships.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                Memberships = memberships
+            };
+
+            return View(viewModel);
         }
 
         protected override void Dispose(bool disposing)
