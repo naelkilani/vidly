@@ -219,9 +219,30 @@
     <Compile Include="Migrations\202001152232424_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>202001152232424_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001162312445_AddGenre.cs" />
+    <Compile Include="Migrations\202001162312445_AddGenre.Designer.cs">
+      <DependentUpon>202001162312445_AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001162328268_AddGenre1.cs" />
+    <Compile Include="Migrations\202001162328268_AddGenre1.Designer.cs">
+      <DependentUpon>202001162328268_AddGenre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001162343334_AddGenre2.cs" />
+    <Compile Include="Migrations\202001162343334_AddGenre2.Designer.cs">
+      <DependentUpon>202001162343334_AddGenre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001162345250_AddGenre3.cs" />
+    <Compile Include="Migrations\202001162345250_AddGenre3.Designer.cs">
+      <DependentUpon>202001162345250_AddGenre3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001162347317_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\202001162347317_PopulateGenresTable.Designer.cs">
+      <DependentUpon>202001162347317_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Membership.cs" />
@@ -290,6 +311,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +362,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001152232424_AddBirthdateToCustomer.resx">
       <DependentUpon>202001152232424_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001162312445_AddGenre.resx">
+      <DependentUpon>202001162312445_AddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001162328268_AddGenre1.resx">
+      <DependentUpon>202001162328268_AddGenre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001162343334_AddGenre2.resx">
+      <DependentUpon>202001162343334_AddGenre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001162345250_AddGenre3.resx">
+      <DependentUpon>202001162345250_AddGenre3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001162347317_PopulateGenresTable.resx">
+      <DependentUpon>202001162347317_PopulateGenresTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
