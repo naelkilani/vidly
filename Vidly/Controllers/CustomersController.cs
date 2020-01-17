@@ -59,6 +59,7 @@ namespace Vidly.Controllers
             return View("CustomerForm", viewModel);
         }
 
+
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
@@ -69,6 +70,7 @@ namespace Vidly.Controllers
             else
             {
                 var customerInDb = _context.Customers.First(c => c.Id == customer.Id);
+                //ToDo: Use AutoMapper.
                 MapCustomerData(customerInDb, customer);
             }
 
