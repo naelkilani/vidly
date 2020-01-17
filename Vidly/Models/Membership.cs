@@ -9,6 +9,8 @@ namespace Vidly.Models
         public byte DurationInMonths { get; set; }
         public decimal SignUpFee { get; set; }
         public decimal DiscountRate { get; set; }
+
+        //ToDo: handle this. 
         [NotMapped]
         public string DiscountRateDisplay => $"{DiscountRate * 100}%";
     }
