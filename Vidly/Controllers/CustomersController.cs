@@ -35,25 +35,54 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
-            var memberships = _context.Memberships.ToList();
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
-                Memberships = memberships
+                Memberships = _context.Memberships.ToList()
             };
 
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.Include(c => c.Membership).FirstOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                Memberships = _context.Memberships.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            if (!ModelState.IsValid)
-                return RedirectToAction("New", "Customers");
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDb = _context.Customers.First(c => c.Id == customer.Id);
+                MapCustomerData(customerInDb, customer);
+            }
 
-            _context.Customers.Add(customer);
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
+        }
+
+        private void MapCustomerData(Customer customerInDb, Customer customer)
+        {
+            customerInDb.Name = customer.Name;
+            customerInDb.Birthdate = customer.Birthdate;
+            customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            customerInDb.MembershipId = customer.MembershipId;
         }
 
         protected override void Dispose(bool disposing)
