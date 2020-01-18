@@ -1,14 +1,16 @@
-﻿using System.Data.Entity;
+﻿using AutoMapper;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ModelsDtos;
 using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public CustomersController()
         {
@@ -52,7 +54,7 @@ namespace Vidly.Controllers
 
             var viewModel = new CustomerFormViewModel
             {
-                Customer = customer,
+                CustomerDto = Mapper.Map<Customer, CustomerDto>(customer),
                 Memberships = _context.Memberships.ToList()
             };
 
@@ -61,31 +63,29 @@ namespace Vidly.Controllers
 
 
         [HttpPost]
-        public ActionResult Save(Customer customer)
+        public ActionResult Save(CustomerDto customerDto)
         {
             //ToDo: Add Validation and handle the !ModelState.IsValid on creating. 
-            if (customer.Id == 0)
-            {
-                _context.Customers.Add(customer);
-            }
+            if (customerDto.Id == 0)
+                AddCustomer(customerDto);
             else
-            {
-                var customerInDb = _context.Customers.First(c => c.Id == customer.Id);
-                //ToDo: Use AutoMapper.
-                MapCustomerData(customerInDb, customer);
-            }
+                UpdateCustomer(customerDto);
 
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
         }
 
-        private void MapCustomerData(Customer customerInDb, Customer customer)
+        private void AddCustomer(CustomerDto customerDto)
         {
-            customerInDb.Name = customer.Name;
-            customerInDb.Birthdate = customer.Birthdate;
-            customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
-            customerInDb.MembershipId = customer.MembershipId;
+            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
+            _context.Customers.Add(customer);
+        }
+
+        private void UpdateCustomer(CustomerDto customerDto)
+        {
+            var customerInDb = _context.Customers.First(c => c.Id == customerDto.Id);
+            Mapper.Map(customerDto, customerInDb);
         }
 
         protected override void Dispose(bool disposing)

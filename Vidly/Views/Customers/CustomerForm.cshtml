@@ -1,6 +1,6 @@
 ﻿@model Vidly.ViewModels.CustomerFormViewModel
 @{
-    var isNewCustomer  = Model.Customer == null;
+    var isNewCustomer  = Model.CustomerDto == null;
     ViewBag.Title = isNewCustomer ? "New Customer" : "Edit Customer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -10,21 +10,21 @@
 @using (Html.BeginForm("Save", "Customers"))
 {
     <div class="form-group">
-        @Html.LabelFor(c => c.Customer.Name)
-        @Html.TextBoxFor(c => c.Customer.Name, new { @class = "form-control" })
+        @Html.LabelFor(c => c.CustomerDto.Name)
+        @Html.TextBoxFor(c => c.CustomerDto.Name, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(c => c.Customer.Birthdate)
-        @Html.TextBoxFor(c => c.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.LabelFor(c => c.CustomerDto.Birthdate)
+        @Html.TextBoxFor(c => c.CustomerDto.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(c => c.Customer.MembershipId)
-        @Html.DropDownListFor(c => c.Customer.MembershipId, new SelectList(Model.Memberships, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.LabelFor(c => c.CustomerDto.MembershipId)
+        @Html.DropDownListFor(c => c.CustomerDto.MembershipId, new SelectList(Model.Memberships, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
     </div>
     <div class="checkbox">
-        <label>@Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsletter)</label> Subscribed to Newsletter?
+        <label>@Html.CheckBoxFor(c => c.CustomerDto.IsSubscribedToNewsletter)</label> Subscribed to Newsletter?
     </div>
 
-    @Html.HiddenFor(c => c.Customer.Id)
+    @Html.HiddenFor(c => c.CustomerDto.Id)
     <button class="btn btn-primary">Save</button>
 }
