@@ -63,6 +63,7 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
+            //ToDo: Add Validation and handle the !ModelState.IsValid on creating. 
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
