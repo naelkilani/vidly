@@ -28,6 +28,7 @@ namespace Vidly.Controllers
         {
             var viewModel = new CustomerFormViewModel
             {
+                CustomerDto = new CustomerDto(),
                 Memberships = _context.Memberships.ToList()
             };
 
@@ -54,10 +55,6 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(CustomerDto customerDto)
         {
-            // This is a bad line, we end up with this because the Save action is for the 
-            // Add and Update. If this for Add only we can use [Bind(Exclude = "Id")] CustomerDto customerDto.
-            ModelState.Remove("customerDto.Id");
-
             if (!ModelState.IsValid)
             {
                 var viewModel = new CustomerFormViewModel
