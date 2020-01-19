@@ -6,7 +6,10 @@ namespace Vidly.ModelsDtos
 {
     public class CustomerDto
     {
-        public int Id { get; set; }
+        public static readonly int Unkown = 0;
+        public static readonly int PayAsYouGo = 1;
+
+        public int? Id { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter customer's name.")]
         [StringLength(255)]
@@ -18,10 +21,13 @@ namespace Vidly.ModelsDtos
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
 
+        [Required]
         [Display(Name = "Membership Type")]
-        public int MembershipId { get; set; }
+        public int? MembershipId { get; set; }
 
-        public static readonly int Unkown = 0;
-        public static readonly int PayAsYouGo = 1;
+        public CustomerDto()
+        {
+            Id = 0;
+        }
     }
 }
