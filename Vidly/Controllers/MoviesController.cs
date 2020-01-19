@@ -2,8 +2,8 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using Vidly.Models;
 using Vidly.Dtos;
+using Vidly.Models;
 using Vidly.ViewModels;
 
 namespace Vidly.Controllers
@@ -80,6 +80,7 @@ namespace Vidly.Controllers
         {
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
             _context.Movies.Add(movie);
+            movieDto.Id = movie.Id;
         }
 
         private void UpdateMovie(MovieDto movieDto)
