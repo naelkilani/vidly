@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Vidly.Validation;
 
 namespace Vidly.ModelsDtos
 {
@@ -13,10 +14,14 @@ namespace Vidly.ModelsDtos
 
         public bool IsSubscribedToNewsletter { get; set; }
 
+        [Min18YearsIfAMember]
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
 
         [Display(Name = "Membership Type")]
         public int MembershipId { get; set; }
+
+        public static readonly int Unkown = 0;
+        public static readonly int PayAsYouGo = 1;
     }
 }
