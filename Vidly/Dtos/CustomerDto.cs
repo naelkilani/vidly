@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Vidly.Validation;
 
-namespace Vidly.ModelsDtos
+namespace Vidly.Dtos
 {
     public class CustomerDto
     {

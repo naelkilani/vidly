@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Vidly.ModelsDtos;
+using Vidly.Dtos;
 using Vidly.Utilities;
 
 namespace Vidly.Validation
