@@ -54,7 +54,18 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(CustomerDto customerDto)
         {
-            //ToDo: Add Validation and handle the !ModelState.IsValid on creating. 
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    CustomerDto = customerDto,
+                    Memberships = _context.Memberships.ToList()
+
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
             if (customerDto.Id == 0)
                 AddCustomer(customerDto);
             else
