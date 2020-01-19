@@ -247,6 +247,10 @@
     <Compile Include="Migrations\202001191506556_TryFixAddingMovie.Designer.cs">
       <DependentUpon>202001191506556_TryFixAddingMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001192017266_UpdateMovieDataAnnotations.cs" />
+    <Compile Include="Migrations\202001192017266_UpdateMovieDataAnnotations.Designer.cs">
+      <DependentUpon>202001192017266_UpdateMovieDataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelsDtos\CustomerDto.cs" />
     <Compile Include="ModelsDtos\MovieDto.cs" />
@@ -393,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001191506556_TryFixAddingMovie.resx">
       <DependentUpon>202001191506556_TryFixAddingMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001192017266_UpdateMovieDataAnnotations.resx">
+      <DependentUpon>202001192017266_UpdateMovieDataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

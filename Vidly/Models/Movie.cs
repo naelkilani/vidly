@@ -7,10 +7,11 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         [StringLength(255)]
         public string Name { get; set; }
 
+        [Range(1, 20)]
         public int StockNumber { get; set; }
 
         public DateTime ReleaseDate { get; set; }
@@ -19,7 +20,6 @@ namespace Vidly.Models
 
         public Genre Genre { get; set; }
 
-        [Required]
         public int GenreId { get; set; }
     }
 }

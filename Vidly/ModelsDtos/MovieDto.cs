@@ -7,10 +7,11 @@ namespace Vidly.ModelsDtos
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         [StringLength(255)]
         public string Name { get; set; }
 
+        [Range(1, 20)]
         [Display(Name = "Number in Stock")]
         public int StockNumber { get; set; }
 

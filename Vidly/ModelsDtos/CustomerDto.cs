@@ -8,7 +8,7 @@ namespace Vidly.ModelsDtos
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter customer's name.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }
 
