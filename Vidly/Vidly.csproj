@@ -243,6 +243,10 @@
     <Compile Include="Migrations\202001162347317_PopulateGenresTable.Designer.cs">
       <DependentUpon>202001162347317_PopulateGenresTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001191506556_TryFixAddingMovie.cs" />
+    <Compile Include="Migrations\202001191506556_TryFixAddingMovie.Designer.cs">
+      <DependentUpon>202001191506556_TryFixAddingMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelsDtos\CustomerDto.cs" />
     <Compile Include="ModelsDtos\MovieDto.cs" />
@@ -384,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001162347317_PopulateGenresTable.resx">
       <DependentUpon>202001162347317_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001191506556_TryFixAddingMovie.resx">
+      <DependentUpon>202001191506556_TryFixAddingMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

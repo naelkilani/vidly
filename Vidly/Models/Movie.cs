@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vidly.Models
 {
@@ -16,7 +15,6 @@ namespace Vidly.Models
 
         public DateTime ReleaseDate { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime AddedDate { get; set; } = DateTime.Now;
 
         public Genre Genre { get; set; }

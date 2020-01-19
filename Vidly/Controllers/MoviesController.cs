@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -59,15 +58,7 @@ namespace Vidly.Controllers
             else
                 UpdateMovie(movieDto);
 
-            try
-            {
-                _context.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
         }
