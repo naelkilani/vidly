@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Vidly.Models;
 
 namespace Vidly.ModelsDtos
 {
@@ -18,11 +17,7 @@ namespace Vidly.ModelsDtos
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        [Required]
-        public Genre Genre { get; set; }
-
         [Display(Name = "Genre")]
         public int GenreId { get; set; }
-
     }
 }
