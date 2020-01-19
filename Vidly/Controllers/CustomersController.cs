@@ -82,6 +82,7 @@ namespace Vidly.Controllers
         {
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
+            customerDto.Id = customer.Id;
         }
 
         private void UpdateCustomer(CustomerDto customerDto)
