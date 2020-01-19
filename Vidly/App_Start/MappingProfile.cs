@@ -10,6 +10,9 @@ namespace Vidly.App_Start
         {
             CreateMap<CustomerDto, Customer>();
             CreateMap<Customer, CustomerDto>();
+
+            CreateMap<MovieDto, Movie>();
+            CreateMap<Movie, MovieDto>();
         }
     }
 }
