@@ -8,6 +8,6 @@ namespace Vidly.ViewModels
     {
         public IEnumerable<Membership> Memberships { get; set; }
         public CustomerDto CustomerDto { get; set; }
-        public string Title => CustomerDto == null ? "New Customer" : "Edit Customer";
+        public string Title => CustomerDto != null && CustomerDto.Id != 0 ? "Edit Customer" : "New Customer";
     }
 }
