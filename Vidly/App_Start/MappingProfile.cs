@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Vidly.Models;
 using Vidly.Dtos;
+using Vidly.Models;
 
 namespace Vidly.App_Start
 {
