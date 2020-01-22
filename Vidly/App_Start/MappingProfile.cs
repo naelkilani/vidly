@@ -13,6 +13,8 @@ namespace Vidly.App_Start
 
             CreateMap<MovieDto, Movie>().ForMember(m => m.Id, opt => opt.Ignore());
             CreateMap<Movie, MovieDto>();
+
+            CreateMap<Membership, MembershipDto>();
         }
     }
 }

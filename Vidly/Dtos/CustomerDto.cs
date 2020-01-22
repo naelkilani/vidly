@@ -25,6 +25,8 @@ namespace Vidly.Dtos
         [Display(Name = "Membership Type")]
         public int? MembershipId { get; set; }
 
+        public MembershipDto Membership { get; set; }
+
         public CustomerDto()
         {
             Id = 0;

@@ -1,6 +1,6 @@
-﻿namespace Vidly.Models
+﻿namespace Vidly.Dtos
 {
-    public class Membership
+    public class MembershipDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
