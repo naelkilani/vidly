@@ -24,6 +24,8 @@ namespace Vidly.Dtos
         [Display(Name = "Genre")]
         public int? GenreId { get; set; }
 
+        public GenreDto Genre { get; set; }
+
         public MovieDto()
         {
             Id = 0;
