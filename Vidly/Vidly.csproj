@@ -265,6 +265,10 @@
     <Compile Include="Migrations\202001192017266_UpdateMovieDataAnnotations.Designer.cs">
       <DependentUpon>202001192017266_UpdateMovieDataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001252244372_SeedUsers.cs" />
+    <Compile Include="Migrations\202001252244372_SeedUsers.Designer.cs">
+      <DependentUpon>202001252244372_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
@@ -590,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001192017266_UpdateMovieDataAnnotations.resx">
       <DependentUpon>202001192017266_UpdateMovieDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001252244372_SeedUsers.resx">
+      <DependentUpon>202001252244372_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
