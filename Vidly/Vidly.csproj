@@ -273,6 +273,10 @@
     <Compile Include="Migrations\202001252344167_AddDrivingLicenseToApplicationUser.Designer.cs">
       <DependentUpon>202001252344167_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001262208208_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\202001262208208_AddPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>202001262208208_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
@@ -609,6 +613,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001252344167_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>202001252344167_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001262208208_AddPhoneToApplicationUser.resx">
+      <DependentUpon>202001262208208_AddPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,5 +12,11 @@ namespace Vidly.ViewModels
         [StringLength(255)]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Phone]
+        public string Phone { get; set; }
+
     }
 }
