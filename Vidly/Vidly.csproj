@@ -184,12 +184,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\RentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipDto.cs" />
+    <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,9 +279,22 @@
     <Compile Include="Migrations\202001262208208_AddPhoneToApplicationUser.Designer.cs">
       <DependentUpon>202001262208208_AddPhoneToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002092158517_AddRentalModel.cs" />
+    <Compile Include="Migrations\202002092158517_AddRentalModel.Designer.cs">
+      <DependentUpon>202002092158517_AddRentalModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002092237157_AddRentalModel1.cs" />
+    <Compile Include="Migrations\202002092237157_AddRentalModel1.Designer.cs">
+      <DependentUpon>202002092237157_AddRentalModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002092305513_AddRentalModel2.cs" />
+    <Compile Include="Migrations\202002092305513_AddRentalModel2.Designer.cs">
+      <DependentUpon>202002092305513_AddRentalModel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -618,6 +633,18 @@
     <EmbeddedResource Include="Migrations\202001262208208_AddPhoneToApplicationUser.resx">
       <DependentUpon>202001262208208_AddPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002092158517_AddRentalModel.resx">
+      <DependentUpon>202002092158517_AddRentalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002092237157_AddRentalModel1.resx">
+      <DependentUpon>202002092237157_AddRentalModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002092305513_AddRentalModel2.resx">
+      <DependentUpon>202002092305513_AddRentalModel2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
