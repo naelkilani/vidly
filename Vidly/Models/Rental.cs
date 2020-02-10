@@ -5,13 +5,13 @@ namespace Vidly.Models
 {
     public class Rental
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public Customer Customer { get; set; }
 
         public Movie Movie { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime RentedDate { get; set; } = DateTime.Now;
 
         public DateTime? ReturnedDate { get; set; }

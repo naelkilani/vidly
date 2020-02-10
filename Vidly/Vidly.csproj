@@ -291,6 +291,26 @@
     <Compile Include="Migrations\202002092305513_AddRentalModel2.Designer.cs">
       <DependentUpon>202002092305513_AddRentalModel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002102201048_Dumy.cs" />
+    <Compile Include="Migrations\202002102201048_Dumy.Designer.cs">
+      <DependentUpon>202002102201048_Dumy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002102206423_TryFixCannotInsertExplicitValueForIdentityColumn.cs" />
+    <Compile Include="Migrations\202002102206423_TryFixCannotInsertExplicitValueForIdentityColumn.Designer.cs">
+      <DependentUpon>202002102206423_TryFixCannotInsertExplicitValueForIdentityColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002102213376_TryFixRentedDate.cs" />
+    <Compile Include="Migrations\202002102213376_TryFixRentedDate.Designer.cs">
+      <DependentUpon>202002102213376_TryFixRentedDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002102229309_AddAvailableNumberToMovie.cs" />
+    <Compile Include="Migrations\202002102229309_AddAvailableNumberToMovie.Designer.cs">
+      <DependentUpon>202002102229309_AddAvailableNumberToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002102233424_AddAvailableNumberToMovie1.cs" />
+    <Compile Include="Migrations\202002102233424_AddAvailableNumberToMovie1.Designer.cs">
+      <DependentUpon>202002102233424_AddAvailableNumberToMovie1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
@@ -641,6 +661,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002092305513_AddRentalModel2.resx">
       <DependentUpon>202002092305513_AddRentalModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002102201048_Dumy.resx">
+      <DependentUpon>202002102201048_Dumy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002102206423_TryFixCannotInsertExplicitValueForIdentityColumn.resx">
+      <DependentUpon>202002102206423_TryFixCannotInsertExplicitValueForIdentityColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002102213376_TryFixRentedDate.resx">
+      <DependentUpon>202002102213376_TryFixRentedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002102229309_AddAvailableNumberToMovie.resx">
+      <DependentUpon>202002102229309_AddAvailableNumberToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002102233424_AddAvailableNumberToMovie1.resx">
+      <DependentUpon>202002102233424_AddAvailableNumberToMovie1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

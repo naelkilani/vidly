@@ -14,6 +14,8 @@ namespace Vidly.Models
         [Range(1, 20)]
         public int StockNumber { get; set; }
 
+        public int AvailableNumber { get; set; }
+
         public DateTime ReleaseDate { get; set; }
 
         public DateTime AddedDate { get; set; } = DateTime.Now;

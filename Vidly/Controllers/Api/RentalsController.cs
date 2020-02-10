@@ -17,19 +17,22 @@ namespace Vidly.Controllers.Api
         [HttpPost]
         public IHttpActionResult Post(NewRentalDto newRentalDto)
         {
-            if (!_context.Customers.Any(c => c.Id == newRentalDto.CustomerId))
-                return BadRequest();
+            var customer = _context.Customers.First(c => c.Id == newRentalDto.CustomerId);
 
-            if (newRentalDto.MovieIds.Any(id => !_context.Movies.Any(m => m.Id == id)))
-                return BadRequest();
-            
-            foreach (var movieId in newRentalDto.MovieIds)
+            var movies = _context.Movies.Where(m => newRentalDto.MovieIds.Contains(m.Id)).ToList();
+
+            foreach (var movie in movies)
             {
+                if (movie.AvailableNumber == 0)
+                    return BadRequest($"Movie ID: {movie.Id}, Name: {movie.Name} isn't available currently in the Rental.");
+
                 _context.Rentals.Add(new Rental
                 {
-                    CustomerId = newRentalDto.CustomerId,
-                    MovieId = movieId
+                    Customer = customer,
+                    Movie = movie
                 });
+
+                movie.AvailableNumber--;
             }
 
             _context.SaveChanges();
