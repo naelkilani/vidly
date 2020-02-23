@@ -15,7 +15,7 @@
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" class="form-control" type="text" value="" />
+            <input id="movie" data-rule-atLeastOneMovie="true" class="form-control" type="text" value="" />
         </div>
     </div>
     <div class="row">
@@ -82,7 +82,11 @@
 
             $.validator.addMethod("validCustomer", function() {
                 return vm.customerId && vm.customerId !== 0;
-            }, "Please select a valid customer");
+            }, "Please select a valid customer.");
+
+            $.validator.addMethod("atLeastOneMovie", function() {
+                return vm.movieIds.length > 0;
+            }, "Please select at least one movie.");
 
             $("#newRental").validate({
                 submitHandler: function() {
@@ -90,14 +94,13 @@
                     $.post({
                             url: "/api/rentals/",
                             data: vm
-                        })
-                        .done(function() {
-                            toastr.success("Rentals successfully recorded.");
-                        })
-                        .fail(function() {
-                            toastr.error("Something unexpected happened.");
-                        });
-
+                    })
+                    .done(function() {
+                        toastr.success("Rentals successfully recorded.");
+                    })
+                    .fail(function() {
+                        toastr.error("Something unexpected happened.");
+                    });
                 }
             });
         });
