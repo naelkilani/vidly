@@ -17,10 +17,15 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(string query = null)
         {
-            return Ok(_context.Movies
-                .Include(m => m.Genre)
+            var moviesQuery = _context.Movies.Include(m => m.Genre);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.AvailableNumber > 0 &&
+                                                     m.Name.Contains(query));
+
+            return Ok(moviesQuery
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>));
         }
