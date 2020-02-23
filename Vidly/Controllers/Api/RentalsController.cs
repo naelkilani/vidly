@@ -19,7 +19,9 @@ namespace Vidly.Controllers.Api
         {
             var customer = _context.Customers.First(c => c.Id == newRentalDto.CustomerId);
 
-            var movies = _context.Movies.Where(m => newRentalDto.MovieIds.Contains(m.Id)).ToList();
+            var movies = _context.Movies
+                .Where(m => newRentalDto.MovieIds.Contains(m.Id))
+                .ToList();
 
             foreach (var movie in movies)
             {

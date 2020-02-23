@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -17,10 +18,14 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(string query = null)
         {
-            return Ok(_context.Customers
-                .Include(c => c.Membership)
+            var customersQuery = _context.Customers.Include(c => c.Membership);
+
+            if (!query.IsNullOrWhiteSpace())
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+            return Ok(customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>));
         }
